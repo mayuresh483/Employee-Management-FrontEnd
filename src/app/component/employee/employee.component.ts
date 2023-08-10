@@ -71,6 +71,7 @@ export class EmployeeComponent implements OnInit {
     this.employeeService.addEmployee(addForm.value).subscribe(
       (res) => {
         alert("Added Successfully");
+        addForm.reset();
         this.getEmployees();
       }, (error: HttpErrorResponse) => {
         alert(error.message);
